@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas Sustentáveis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main-style.css">
+    <style>
+        .tips-section {
+            padding: 100px 0 50px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
+            min-height: 100vh;
+        }
+
+        .tips-section h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .tip-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tip-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .tip-card:hover i {
+            color: var(--secondary);
+        }
+
+        .tip-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .tip-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .tips-section h1 {
+                font-size: 2rem;
+            }
+
+            .tip-card {
+                padding: 20px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-battery-three-quarters"></i>
+                <span class="logo-text">Descarte Correto</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="how.html">Como descartar</a></li>
+                    <li><a href="collection-point.html">Pontos de coleta</a></li>
+                    <li><a href="sust-tips.html">Dicas sustentáveis</a></li>
+                    <li><a href="about.html">Sobre o projeto</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tips-section">
+            <h1>Dicas Sustentáveis para Descarte de Pilhas e Baterias</h1>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Use Baterias Recarregáveis</h3>
+                    <p>Opte por baterias recarregáveis para reduzir o consumo e o descarte de pilhas descartáveis, contribuindo para a sustentabilidade.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Descarte em Pontos de Coleta</h3>
+                    <p>Leve suas pilhas e baterias usadas aos pontos de coleta específicos para reciclagem, evitando contaminação do meio ambiente.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-ban"></i>
+                    <h3>Não Jogue no Lixo Comum</h3>
+                    <p>Evite descartar pilhas no lixo doméstico. Elas contêm substâncias tóxicas que podem poluir o solo e a água.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Reduza o Consumo</h3>
+                    <p>Use dispositivos com baixo consumo de energia ou opte por alternativas sem pilhas, como carregadores solares.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Eduque e Compartilhe</h3>
+                    <p>Compartilhe essas dicas com amigos e família para promover um descarte responsável e sustentável.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Prefira Produtos Ecológicos</h3>
+                    <p>Escolha produtos e aparelhos que utilizem baterias de longa duração ou sejam mais fáceis de reciclar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a class="logo" style="cursor: default;">
+                        <i class="fas fa-battery-three-quarters"></i>
+                        <span class="logo-text">Descarte Correto</span>
+                    </a>
+                    <p style="margin-top: 10px;">Sua iniciativa para um descarte responsável de pilhas e baterias.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="how.html">Como descartar</a></li>
+                        <li><a href="collection-point.html">Pontos de coleta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre o projeto</a></li>
+                        <li><a href="sust-tips.html">Dicas sustentáveis</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Projeto desenvolvido para Hackathon Comunitário – 2025</p>
+            </div>
+        </div>
+    </footer>

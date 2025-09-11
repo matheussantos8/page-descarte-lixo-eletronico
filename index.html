@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarte Correto de Pilhas e Baterias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/main-style.css">
+    <style>
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./imgs/battery.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            
+        }
+
+        .hero-content {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: #ffc107;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
+
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .steps .section-title h2 {
+            color: var(--light);
+            
+        }
+
+
+        .benefits-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            
+        }
+
+        .benefit-item {
+            flex: 0 0 calc(33.333% - 30px);
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .steps {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #246428;
+            border-radius: 5%;
+            cursor: default;
+        }
+
+        .step-item {
+            flex: 0 0 calc(33.333% - 20px);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .step-item h3 {
+            margin-bottom: 15px;
+        }
+
+        .news {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
+        }
+
+        .news-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .news-container a {
+            text-decoration: none;
+            color: inherit;
+            flex: 0 0 calc(33.333% - 20px);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .benefits-container, .steps-container, .news-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .benefit-item, .step-item {
+                flex: 0 0 48%;
+                margin-bottom: 20px;
+            }
+            .news-container a {
+                flex: 0 0 48%;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .hero {
+                height: 80vh;
+                padding: 20px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            .benefit-item, .step-item {
+                flex: 0 0 100%;
+            }
+            .news-container a {
+                flex: 0 0 100%;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .benefit-item, .step-item {
+                padding: 20px;
+            }
+            .news-card {
+                margin-bottom: 20px;
+            }
+            .footer-links h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   
+    <header>
+        <div class="container header-container">
+            <a href="main-Page.html" class="logo">
+                <i class="fas fa-battery-three-quarters"></i>
+                <span class="logo-text">Descarte Correto</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="main-Page.html">Início</a></li>
+                    <li><a href="./html/how.html">Como descartar</a></li>
+                    <li><a href="./html/collection-point.html">Pontos de coleta</a></li>
+                    <li><a href="./html/sust-tips.html">Dicas sustentáveis</a></li>
+                    <li><a href="./html/about.html">Sobre o projeto</a></li>
+                    <li><a href="./html/contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Descarte suas pilhas e baterias de forma correta!</h1>
+            <p>Conectando você a pontos de coleta e ajudando o meio ambiente.</p>
+            <a href="./html/collection-point.html" class="btn">Encontre um ponto de coleta</a>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que descartar corretamente?</h2>
+            </div>
+            <div class="benefits-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Meio ambiente protegido</h3>
+                    <p>Evita contaminação do solo e da água por metais pesados, preservando ecossistemas.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Mais saúde para todos</h3>
+                    <p>Reduz riscos à saúde humana causados pela exposição a substâncias tóxicas.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Futuro sustentável</h3>
+                    <p>Contribui para uma cidade mais limpa e para o desenvolvimento sustentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Como funciona?</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Junte suas pilhas e baterias usadas</h3>
+                    <p>Armazene em um recipiente plástico ou de vidro com tampa.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Procure um ponto de coleta no mapa</h3>
+                    <p>Encontre o local mais próximo e conveniente para você.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Descarte corretamente e ajude o planeta</h3>
+                    <p>Entregue seus resíduos para reciclagem especializada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notícias e Curiosidades</h2>
+            </div>
+            <div class="news-container">
+                <a href="https://ecoassist.com.br/descarte-pilhas-baterias-2" target="_blank">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/90ec76fc-f27c-41c6-bd97-2b0457604e86.png"
+                                alt="Imagem mostrando solo contaminado por pilhas">
+                        </div>
+                        <div class="news-content">
+                            <h3>Impacto ambiental das pilhas</h3>
+                            <p>Saiba como uma única pilha pode contaminar milhares de litros de água.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://greeneletron.org.br/blog/reciclagem-pilhas-baterias" target="_blank">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6e6a8508-a371-4a72-9a0a-10901d4029b6.png"
+                                alt="Processo industrial de reciclagem de pilhas">
+                        </div>
+                        <div class="news-content">
+                            <h3>O processo de reciclagem</h3>
+                            <p>Conheça as etapas da reciclagem e como os materiais são reaproveitados.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/pilhas-e-baterias/?utm_source=chatgpt.com"
+                    target="_blank">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b4ddf59d-25cc-4794-93f5-33131428bce9.png"
+                                alt="Caminhão coletando pilhas para reciclagem">
+                        </div>
+                        <div class="news-content">
+                            <h3>Benefícios da logística reversa</h3>
+                            <p>Entenda como empresas e consumidores trabalham juntos na coleta seletiva.</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a class="logo" style="cursor: default;">
+                        <i class="fas fa-battery-three-quarters"></i>
+                        <span class="logo-text">Descarte Correto</span>
+                    </a>
+                    <p style="margin-top: 10px;">Sua iniciativa para um descarte responsável de pilhas e baterias.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="main-Page.html">Início</a></li>
+                        <li><a href="./html/how.html">Como descartar</a></li>
+                        <li><a href="./html/collection-point.html">Pontos de coleta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="./html/about.html">Sobre o projeto</a></li>
+                        <li><a href="./html/sust-tips.html">Dicas sustentáveis</a></li>
+                        <li><a href="./html/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Projeto desenvolvido para Hackathon Comunitário – 2025</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

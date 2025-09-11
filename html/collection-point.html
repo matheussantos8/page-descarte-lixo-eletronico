@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos de Coleta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main-style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <style>
+         #map {
+      height: 400px; 
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+       section{
+        margin-bottom: 30px;
+       }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-battery-three-quarters"></i>
+                <span class="logo-text">Descarte Correto</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="how.html">Como descartar</a></li>
+                    <li><a href="collection-point.html">Pontos de coleta</a></li>
+                    <li><a href="sust-tips.html">Dicas sustentáveis</a></li>
+                    <li><a href="about.html">Sobre o projeto</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h2>Pontos de Coleta</h2>
+
+    <section class="collection-areas-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="margin-top: 50px;">Áreas para Descarte e Coleta</h2>
+            </div>
+            <div id="map" style="width: 100%; height: 400px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);"></div>
+            <p class="map-info" style="margin-top: 15px; font-size: 1rem; color: #333;">
+                Encontre os pontos oficiais para descarte correto de pilhas e baterias na sua região. 
+                Contribua para a preservação do meio ambiente descartando seus resíduos de forma segura e responsável.
+            </p>
+        </div>
+    </section>
+  
+   
+
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a class="logo" style="cursor: default;">
+                        <i class="fas fa-battery-three-quarters"></i>
+                        <span class="logo-text">Descarte Correto</span>
+                    </a>
+                    <p style="margin-top: 10px;">Sua iniciativa para um descarte responsável de pilhas e baterias.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="how.html">Como descartar</a></li>
+                        <li><a href="collection-point.html">Pontos de coleta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre o projeto</a></li>
+                        <li><a href="sust-tips.html">Dicas sustentáveis</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Projeto desenvolvido para Hackathon Comunitário – 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    
+    <script>
+      var map = L.map('map').setView([-22.9068, -43.1729], 12);
+  
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+  
+      
+      var pontos = [
+        {lat: -22.9371, lng: -43.1775, nome: "SESC Flamengo (Rua Marquês de Abrantes, 99)" },
+        {lat: -22.8950, lng: -43.1800, nome: "INEA – Av. Venezuela, 110 (Centro)" },
+        {lat: -22.9100, lng: -43.2350, nome: "SESC Tijuca – Rua Barão de Mesquita, 539" },
+        {lat: -22.8560, lng: -43.2632, nome: "SESC Ramos – Rua Teixeira Franco, 38" },
+        {lat: -22.9519, lng: -43.2105, nome: "SESC Copacabana – Rua Domingos Ferreira, 160" },
+        {lat: -22.9847, lng: -43.1987, nome: "SESC Leblon – Av. Afrânio de Melo Franco, 290" },
+        {lat: -22.8054, lng: -43.2096, nome: "SESC Nova Iguaçu – Rua Sebastião de Lacerda, 910" },
+        {lat: -22.7583, lng: -43.4608, nome: "SESC Belford Roxo – Rua José dos Reis, 45" },
+        {lat: -22.8756, lng: -43.3397, nome: "SESC Jacarepaguá – Estrada dos Bandeirantes, 1000" },
+        {lat: -22.9176, lng: -43.6089, nome: "SESC Campo Grande – Rua Visconde de Itaboraí, 458" }
+      ];
+  
+      pontos.forEach(p => {
+        L.marker([p.lat, p.lng]).addTo(map)
+          .bindPopup(`<b>${p.nome}</b>`);
+      });
+    </script>
+    

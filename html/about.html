@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main-style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/battery.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .about-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-details {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
+
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .about-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .about-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .about-card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .about-card ul li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                height: 40vh;
+                margin-top: 60px;
+            }
+
+            .about-content h1 {
+                font-size: 2rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="../index.html "class="logo">
+                <i class="fas fa-battery-three-quarters"></i>
+                <span class="logo-text">Descarte Correto</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="how.html">Como descartar</a></li>
+                    <li><a href="collection-point.html">Pontos de coleta</a></li>
+                    <li><a href="sust-tips.html">Dicas sustentáveis</a></li>
+                    <li><a href="about.html">Sobre o projeto</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-content">
+                <h1>Sobre o Projeto Descarte Correto</h1>
+                <p>Uma iniciativa para promover o descarte responsável de pilhas e baterias, contribuindo para um futuro mais sustentável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-details">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>O Projeto</h3>
+                    <p>O Descarte Correto é uma plataforma web desenvolvida como parte de uma atividade de extensão universitária, com o objetivo de conscientizar e facilitar o descarte adequado de pilhas e baterias. O projeto aborda um problema ambiental crítico: a contaminação causada pelo descarte incorreto desses materiais.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Objetivos</h3>
+                    <ul>
+                        <li>Educar sobre os impactos ambientais das pilhas e baterias</li>
+                        <li>Fornecer informações sobre pontos de coleta</li>
+                        <li>Promover práticas sustentáveis de descarte</li>
+                        <li>Contribuir para a preservação do meio ambiente</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Sobre o Desenvolvedor</h3>
+                    <p>Este projeto foi desenvolvido por <strong>Matheus Santos da Silva</strong>, estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>Uninassau</strong>. Como parte de uma atividade de extensão acadêmica, o projeto foi criado para demonstrar conhecimentos em desenvolvimento web e contribuir com questões ambientais relevantes.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Tecnologias Utilizadas</h3>
+                    <ul>
+                        <li><strong>HTML5:</strong> Estrutura semântica da página</li>
+                        <li><strong>CSS3:</strong> Estilização e responsividade</li>
+                        <li><strong>JavaScript:</strong> Interatividade (futuras implementações)</li>
+                        <li><strong>Font Awesome:</strong> Ícones vetoriais</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Contexto Acadêmico</h3>
+                    <p>Este projeto foi desenvolvido no contexto de um <strong>Hackathon Comunitário</strong> como atividade de extensão universitária. A iniciativa visa não apenas cumprir requisitos acadêmicos, mas também gerar impacto positivo na comunidade, promovendo a conscientização ambiental e incentivando práticas sustentáveis de descarte de resíduos.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Impacto Ambiental</h3>
+                    <p>As pilhas e baterias contêm metais pesados como chumbo, cádmio e mercúrio, que podem contaminar o solo e a água se descartados incorretamente. Este projeto busca minimizar esses impactos através da educação e facilitação do descarte responsável, contribuindo para um futuro mais sustentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a class="logo" style="cursor: default;">
+                        <i class="fas fa-battery-three-quarters"></i>
+                        <span class="logo-text">Descarte Correto</span>
+                    </a>
+                    <p style="margin-top: 10px;">Sua iniciativa para um descarte responsável de pilhas e baterias.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="how.html">Como descartar</a></li>
+                        <li><a href="collection-point.html">Pontos de coleta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre o projeto</a></li>
+                        <li><a href="sust-tips.html">Dicas sustentáveis</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Projeto desenvolvido para Hackathon Comunitário – 2025</p>
+            </div>
+        </div>
+    </footer>
